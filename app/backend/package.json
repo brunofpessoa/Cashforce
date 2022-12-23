@@ -2,9 +2,11 @@
   "name": "Cashforce",
   "version": "1.0.0",
   "description": "Backend da aplicação",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "author": "Bruno Fernandes Pessoa",
   "license": "ISC",
@@ -13,6 +15,7 @@
     "sequelize-cli": "^6.5.2"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.28.0"
