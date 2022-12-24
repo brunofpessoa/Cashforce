@@ -45,11 +45,11 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'users',
   });
 
-  // User.associate = (models) => {
-  //   User.belongsTo(models.Order, {
-  //     foreignKey: 'userId',
-  //   });
-  // };
+  User.associate = (models) => {
+    User.hasMany(models.Order, {
+      foreignKey: 'userId',
+    });
+  };
 
   return User;
 };
