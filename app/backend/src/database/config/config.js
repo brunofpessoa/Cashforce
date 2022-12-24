@@ -7,6 +7,8 @@ const options = {
   username: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
   dialect: 'mysql',
+  charset: 'latin1',
+  collate: 'latin1_swedish_ci',
   dialectOptions: {
     timezone: 'Z',
   },
