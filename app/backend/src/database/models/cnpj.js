@@ -28,6 +28,9 @@ module.exports = (sequelize, DataTypes) => {
     Cnpj.hasOne(models.Buyer, {
       foreignKey: 'cnpjId',
     });
+    Cnpj.hasOne(models.Provider, {
+      foreignKey: 'cnpjId',
+    });
   };
 
   return Cnpj;
