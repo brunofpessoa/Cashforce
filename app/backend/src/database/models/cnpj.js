@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     underscored: false,
     timestamps: true,
     tableName: 'cnpjs',
+    initialAutoIncrement: 437,
   });
 
   Cnpj.associate = (models) => {

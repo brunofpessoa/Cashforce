@@ -110,6 +110,7 @@ module.exports = (sequelize, DataTypes) => {
     underscored: false,
     timestamps: true,
     tableName: 'providers',
+    initialAutoIncrement: 235,
   });
 
   Provider.associate = (models) => {

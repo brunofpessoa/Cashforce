@@ -90,6 +90,7 @@ module.exports = (sequelize, DataTypes) => {
     underscored: false,
     timestamps: true,
     tableName: 'orders',
+    initialAutoIncrement: 540,
   });
 
   Order.associate = (models) => {
