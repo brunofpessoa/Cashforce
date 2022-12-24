@@ -5,6 +5,21 @@ const app = express();
 
 app.use(express.json());
 
+
+app.get('/provider/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const providerDetails = await Provider.findOne({
+    where: { id },
+    attributes: ['name', 'tradingName'],
+    include: [
+      { model: Cnpj, as: 'cnpj', attributes: ['cnpj'] },
+    ]
+  });
+
+  return res.status(200).json(providerDetails);
+});
+
 app.get('/', async (_req, res) => {
   const allNfs = await Order.findAll({
       attributes: ['nNf',
