@@ -2,6 +2,8 @@ const express = require('express');
 const { Order, Buyer, Provider, Cnpj } = require('./database/models');
 
 const app = express();
+const cors = require('cors');
+app.use(cors());
 
 app.use(express.json());
 
@@ -34,7 +36,7 @@ app.get('/', async (_req, res) => {
       },
       { model: Provider,
         as: 'provider',
-        attributes: ['id']
+        attributes: ['id', 'name']
       },
     ]
   });
