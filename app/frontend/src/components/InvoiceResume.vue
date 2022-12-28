@@ -1,4 +1,6 @@
 <script>
+import 'bootstrap/dist/css/bootstrap.css';
+
 export default {
   data() {
     return {
@@ -52,7 +54,7 @@ export default {
     </p>
     <table v-else class="table table-borderless text-center">
       <thead>
-        <tr>
+        <tr class="text-mid">
           <th>NOTA FISCAL</th>
           <th>SACADO</th>
           <th>CEDENTE</th>
@@ -61,19 +63,55 @@ export default {
           <th>STATUS</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-dark">
         <tr v-for="nf in nfs" v-bind:key="nf.nNf">
           <td> {{ nf.nNf }} </td>
           <td> {{ nf.buyer.name }} </td>
           <td> {{ nf.provider.name }} </td>
           <td> {{ nf.emissionDate }} </td>
-          <td> R$ {{ nf.value }} </td>
-          <td> {{ nf.status }} </td>
+          <td class="text-theme"> R$ {{ nf.value }} </td>
+          <td class="text-theme"> {{ nf.status }} </td>
           <td>
-            <button>Dados do cedente</button>
+            <button class="btn">Dados do cedente</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 </template>
+
+<style scoped>
+  table {
+    border-collapse: separate;
+    border-spacing: 0 16px;
+  }
+
+  table td {
+    border-top: 1px solid #DFE2EB;
+    border-bottom: 1px solid #DFE2EB;
+    height: 48px;
+    vertical-align: middle;
+  }
+
+  table td:first-of-type{
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-left: 1px solid #DFE2EB;
+  }
+
+  table td:last-of-type{
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-right: 1px solid #DFE2EB;
+  }
+
+  .btn {
+    border: 1px solid #CAD3FF;
+    border-radius: 24px;
+    padding: 8px 29px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+</style>
