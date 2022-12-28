@@ -39,14 +39,18 @@ export default {
 
 
 <template>
-  <div>
-    <h1>Notas Fiscais</h1>
-    <p>Visualize as notas fiscais que você tem.</p>
-
-    <p v-if="loading">Loading...</p>
-    <p v-if="error"> Não foi possível acessar os dados, tente novamente mais tarde.</p>
-
-    <table v-if="!loading && !error">
+  <div class="px-5 pt-5">
+    <div class="d-flex">
+      <img src="../assets/icons/handshake-blue.svg" alt="aperto de mãos" />
+      <h1 class="title text-d-blue mx-1">Notas fiscais</h1>
+    </div>
+    <p class="text-darkish fs-l">Visualize as notas fiscais que você tem.</p>
+    <p v-if="loading" class="mt-3">Carregando...</p>
+    <p v-else-if="error" class="mt-3">Algo deu errado, tente novamente mais tarde.</p>
+    <p v-else-if="nfs.length < 1" class="mt-3">
+      Você ainda não possui nenhuma nota fiscal.
+    </p>
+    <table v-else class="table table-borderless text-center">
       <thead>
         <tr>
           <th>NOTA FISCAL</th>
