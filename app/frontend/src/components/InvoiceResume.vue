@@ -1,14 +1,23 @@
 <script>
 import 'bootstrap/dist/css/bootstrap.css';
-
+import PageTitle from './PageTitle.vue';
+import pageTitleImage from '../assets/icons/handshake-blue.svg';
 export default {
+  components: {
+    PageTitle
+  },
+  setup() {
+    return {
+      pageTitleImage
+    };
+  },
   data() {
     return {
       nfs: null,
       loading: false,
       error: null,
       status: ['Pendente de confirmação', 'Pedido confirmado', 'Não reconhece o pedido', 'Mercadoria não recebida', 'Recebida com avaria', 'Devolvida', 'Recebida com devolução parcial', 'Recebida e confirmada', 'Pagamento Autorizado'],
-    }
+    };
   },
   methods: {
     formatData(nfs) {
@@ -36,22 +45,25 @@ export default {
   created() {
     this.getInvoices();
   }
-}
+};
 </script>
 
 
 <template>
   <div class="px-5 pt-5">
-    <div class="d-flex">
-      <img src="../assets/icons/handshake-blue.svg" alt="aperto de mãos" />
-      <h1 class="title text-d-blue mx-1">Notas fiscais</h1>
-    </div>
-    <p class="text-darkish fs-l">Visualize as notas fiscais que você tem.</p>
+    <PageTitle
+      title="Notas fiscais"
+      sub-title="Visualize as notas fiscais que você tem."
+      :imgSrc="pageTitleImage"
+      imgAlt="Aperto de mãos"
+    />
+
     <p v-if="loading" class="mt-3">Carregando...</p>
     <p v-else-if="error" class="mt-3">Algo deu errado, tente novamente mais tarde.</p>
     <p v-else-if="nfs.length < 1" class="mt-3">
       Você ainda não possui nenhuma nota fiscal.
     </p>
+
     <table v-else class="table table-borderless text-center">
       <thead>
         <tr class="text-mid">
@@ -77,6 +89,7 @@ export default {
         </tr>
       </tbody>
     </table>
+
   </div>
 </template>
 
@@ -109,9 +122,5 @@ export default {
     border: 1px solid #CAD3FF;
     border-radius: 24px;
     padding: 8px 29px;
-  }
-
-  .title {
-    font-size: 24px;
   }
 </style>
