@@ -1,5 +1,5 @@
 <script setup>
-  import InvoiceResume from '../components/InvoiceResume.vue';
+import InvoiceResume from '../components/InvoiceResume.vue';
 </script>
 
 <template>

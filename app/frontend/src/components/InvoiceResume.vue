@@ -54,17 +54,33 @@ export default {
     <PageTitle
       title="Notas fiscais"
       sub-title="Visualize as notas fiscais que você tem."
-      :imgSrc="pageTitleImage"
-      imgAlt="Aperto de mãos"
+      :img-src="pageTitleImage"
+      img-alt="Aperto de mãos"
     />
 
-    <p v-if="loading" class="mt-3">Carregando...</p>
-    <p v-else-if="error" class="mt-3">Algo deu errado, tente novamente mais tarde.</p>
-    <p v-else-if="nfs.length < 1" class="mt-3">
+    <p
+      v-if="loading"
+      class="mt-3"
+    >
+      Carregando...
+    </p>
+    <p
+      v-else-if="error"
+      class="mt-3"
+    >
+      Algo deu errado, tente novamente mais tarde.
+    </p>
+    <p
+      v-else-if="nfs.length < 1"
+      class="mt-3"
+    >
       Você ainda não possui nenhuma nota fiscal.
     </p>
 
-    <table v-else class="table table-borderless text-center">
+    <table
+      v-else
+      class="table table-borderless text-center"
+    >
       <thead>
         <tr class="text-mid">
           <th>NOTA FISCAL</th>
@@ -76,20 +92,28 @@ export default {
         </tr>
       </thead>
       <tbody class="text-dark">
-        <tr v-for="nf in nfs" v-bind:key="nf.nNf">
+        <tr
+          v-for="nf in nfs"
+          :key="nf.nNf"
+        >
           <td> {{ nf.nNf }} </td>
           <td> {{ nf.buyer.name }} </td>
           <td> {{ nf.provider.name }} </td>
           <td> {{ nf.emissionDate }} </td>
-          <td class="text-theme"> R$ {{ nf.value }} </td>
-          <td class="text-theme"> {{ nf.status }} </td>
+          <td class="text-theme">
+            R$ {{ nf.value }}
+          </td>
+          <td class="text-theme">
+            {{ nf.status }}
+          </td>
           <td>
-            <button class="btn">Dados do cedente</button>
+            <button class="btn">
+              Dados do cedente
+            </button>
           </td>
         </tr>
       </tbody>
     </table>
-
   </div>
 </template>
 

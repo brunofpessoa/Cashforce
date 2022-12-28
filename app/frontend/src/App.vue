@@ -1,19 +1,24 @@
 <script setup>
-  import { RouterLink, RouterView } from 'vue-router';
-  import './assets/base.css';
+import './assets/base.css';
 </script>
 
 <template>
   <div class="d-flex">
-
     <section class="menu-section">
       <div>
-        <img class="p-4" src='./assets/logo.png' alt='Cashforce logo' />
+        <img
+          class="p-4"
+          src="./assets/logo.png"
+          alt="Cashforce logo"
+        >
         <nav class="pt-1 d-flex flex-column">
           <RouterLink to="/">
             <div class="d-flex gap-4 menu-item align-items-center">
-              <div class="vl"></div>
-              <img src='./assets/icons/handshake-green.svg' alt='aperto de mãos' />
+              <div class="vl" />
+              <img
+                src="./assets/icons/handshake-green.svg"
+                alt="aperto de mãos"
+              >
               <span>Notas fiscais</span>
             </div>
           </RouterLink>
@@ -22,11 +27,10 @@
     </section>
 
     <section class="flex-grow-1 content-section">
-      <header></header>
-      <hr />
+      <header />
+      <hr>
       <RouterView />
     </section>
-
   </div>
 </template>
 
