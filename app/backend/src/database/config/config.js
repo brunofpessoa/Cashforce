@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const options = {
-  host: process.env.MYSQL_HOST || 'localhost',
+  host: process.env.MYSQL_HOST || 'db',
   port: process.env.MYSQL_PORT || '3306',
   database: process.env.MYSQL_DB_NAME || 'cashforce',
   username: process.env.MYSQL_USER || 'root',
