@@ -2,12 +2,8 @@ version: "3"
 
 services:
   node:
-    image: node:16.14
-    build: .
+    build: ./backend
     container_name: cashforce_backend
-    tty: true
-    stdin_open: true
-    command: bash
     restart: always
     working_dir: /app
     volumes:
@@ -35,6 +31,20 @@ services:
       - 33060:33060
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - cashforce_net
+
+  frontend:
+    build: ./frontend
+    container_name: cashforce_frontend
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - node
+    ports:
+      - 5173:5173
     networks:
       - cashforce_net
 
