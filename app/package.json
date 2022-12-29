@@ -2,7 +2,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "compose:up": "docker-compose up --build",
+    "populate": "node -e \"require('./backend/src/utils/dbUtils').populateDb()\"",
+    "compose:up": "docker-compose up -d --build && npm run populate",
     "compose:down": "docker-compose down -v"
   }
 }
