@@ -8,8 +8,10 @@ services:
     working_dir: /app
     volumes:
       - ./backend:/app
+    
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     ports:
       - 3000:3000
     environment:
@@ -26,6 +28,10 @@ services:
     image: mysql:8.0.23
     platform: linux/x86_64
     restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"] # Deve aguardar o banco ficar operacional
+      timeout: 10s
+      retries: 5
     ports:
       - 3306:3306
       - 33060:33060
