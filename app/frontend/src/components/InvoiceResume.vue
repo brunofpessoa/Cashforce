@@ -1,10 +1,12 @@
 <script>
 import 'bootstrap/dist/css/bootstrap.css';
 import PageTitle from './PageTitle.vue';
+import ProviderDetail from './ProviderDetail.vue';
 import pageTitleImage from '../assets/icons/handshake-blue.svg';
 export default {
   components: {
-    PageTitle
+    PageTitle,
+    ProviderDetail
   },
   setup() {
     return {
@@ -15,6 +17,8 @@ export default {
     return {
       nfs: null,
       loading: false,
+      showProviderDetail: false,
+      providerDetailId: null,
       error: null,
       status: ['Pendente de confirmação', 'Pedido confirmado', 'Não reconhece o pedido', 'Mercadoria não recebida', 'Recebida com avaria', 'Devolvida', 'Recebida com devolução parcial', 'Recebida e confirmada', 'Pagamento Autorizado'],
     };
@@ -41,6 +45,15 @@ export default {
         this.loading = false;
       }
     },
+    handleProviderDetail(id) {
+      if (!this.showProviderDetail) {
+        this.showProviderDetail = true;
+        this.providerDetailId = id;
+      }
+    },
+    closePopup() {
+      this.showProviderDetail = false;
+    }
   },
   created() {
     this.getInvoices();
@@ -107,13 +120,21 @@ export default {
             {{ nf.status }}
           </td>
           <td>
-            <button class="btn">
+            <button
+              class="btn"
+              @click="this.handleProviderDetail(nf.provider.id)"
+            >
               Dados do cedente
             </button>
           </td>
         </tr>
       </tbody>
     </table>
+    <ProviderDetail
+      v-if="showProviderDetail"
+      :id="providerDetailId"
+      :close-popup="closePopup"
+    />
   </div>
 </template>
 
