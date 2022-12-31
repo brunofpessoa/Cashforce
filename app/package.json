@@ -3,9 +3,9 @@
   "private": true,
   "scripts": {
     "populate": "node -e \"require('./backend/src/utils/dbUtils').populateDb()\"",
-    "compose:up": "docker-compose up -d --build && npm run populate",
-    "compose:down": "docker-compose down -v",
-    "compose:dev:up": "docker-compose -f docker-compose.dev.yml up -d --build && npm run populate",
-    "compose:dev:down": "docker-compose -f docker-compose.dev.yml down -v"
+    "compose:up": "docker compose up -d --build && npm run populate",
+    "compose:down": "docker compose down -v",
+    "compose:dev:up": "docker compose -f docker-compose.dev.yml up -d --build && npm run populate",
+    "compose:dev:down": "docker compose -f docker-compose.dev.yml down -v"
   }
 }
