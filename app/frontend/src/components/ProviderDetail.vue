@@ -21,7 +21,8 @@ export default {
     async getProviderDetails() {
       this.loading = true;
       try {
-        const data = await fetch(`http://localhost:3000/provider/${this.id}`);
+        const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
+        const data = await fetch(`${BASE_URL}/provider/${this.id}`);
         const details = await data.json();
 
         this.details = details;
