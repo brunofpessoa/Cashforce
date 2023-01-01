@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
-    "dev": "nodemon ."
+    "dev": "nodemon .",
+    "populate": "node -e \"require('./src/utils/dbUtils').populateDb()\""
   },
   "author": "Bruno Fernandes Pessoa",
   "license": "ISC",

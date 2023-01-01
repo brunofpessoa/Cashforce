@@ -6,7 +6,7 @@ require('dotenv').config();
 const { cwd } = process;
 
 const connect = () => mysql.createPool({
-  host: process.env.MYSQL_HOST || 'localhost',
+  host: process.env.MYSQL_HOST || 'db',
   user: process.env.MYSQL_USER || 'root',
   password: process.env.MYSQL_PASSWORD || 'password',
   multipleStatements: true,
@@ -19,7 +19,7 @@ const runSql = (file) => async () => {
   await db.end();
 };
 
-const populateDb = runSql(path.resolve(`${cwd()}/backend/src/database`, 'db.sql'));
+const populateDb = runSql(path.resolve(`${cwd()}/src/database`, 'db.sql'));
 
 module.exports = {
   connect,
