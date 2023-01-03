@@ -60,16 +60,16 @@ A aplicação foi desenvolvida a partir tendo como referência visual o Design e
 
 Além da página principal requisitada pelo teste também foi desenvolvido uma rota para exibir os detalhes do fornecedor.
 
-O frontend da aplicação foi testado com o __Cypress__ utilizando a proposta end-to-end.
-
-
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
-
 
 
 ### Desenvolvido com
 
 A escolha das tecnologias do projeto se baseou nos requisitos e diferenciais destacados na vaga, por isso __Vue.js__, __Sequelize__ com MySQL, __Node.js__ e __Bootstrap__ foram utilizados. Como diferencial optei por utilizar containers com o __Docker__.
+
+O frontend da aplicação foi testado com o __Cypress__ utilizando a proposta end-to-end.
+
+As tecnologias utilizadas nos testes da API foram: __Mocha__, __Sinon__ e __Chai__;
 
 * [![Vue][Vue.js]][Vue-url]
 * [![Docker][Docker]][Docker-url]
