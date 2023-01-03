@@ -9,6 +9,10 @@ async function getProviderDetails(req, res) {
     return res.status(500).json({ message: data.message });
   }
 
+  if (!data) {
+    return res.status(404).json({ message: 'ID de cedente inválido.' })
+  }
+
   return res.status(200).json(data);
 }
 
