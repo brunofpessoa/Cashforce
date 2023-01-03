@@ -1,6 +1,6 @@
 const { Order, Buyer, Provider } = require('../database/models');
 
-async function getInvoices() {
+async function getOrders() {
   try {
     const allNfs = await Order.findAll({
       attributes: ['nNf',
@@ -26,4 +26,4 @@ async function getInvoices() {
   }
 };
 
-module.exports = { getInvoices };
+module.exports = { getOrders };
