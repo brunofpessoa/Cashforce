@@ -14,8 +14,6 @@
   <p align="center">
     Este é meu teste técnico para a vaga de desenvolvedor Fullstack Node/Vue.js
     <br />
-    <br />
-    - <a href="https://cashforce.brunopessoa.tk">Veja a aplicação</a> -
   </p>
 </div>
 
@@ -48,13 +46,15 @@
 
 ## Sobre o projeto
 
-[![Página inicial][preview-1]](https://cashforce.brunopessoa.tk)
+![Página inicial][preview-1]
 
 O projeto consiste em uma aplicação para gerenciamento de pedidos, nela é possível visualização um resumo das notas fiscais do cliente como número do documento fiscal, data de emissão, valor, estado do pedido, etc.
 
 A aplicação foi desenvolvida a partir tendo como referência visual o Design e o código sql para criação do banco de dados foram fornecidos pela Cashforce.
 
 Além da página principal requisitada pelo teste também foi desenvolvido uma rota para exibir os detalhes do fornecedor.
+
+O frontend da aplicação foi testado com o __Cypress__ utilizando a proposta end-to-end.
 
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
@@ -68,6 +68,7 @@ A escolha das tecnologias do projeto se baseou nos requisitos e diferenciais des
 * [![Vue][Vue.js]][Vue-url]
 * [![Docker][Docker]][Docker-url]
 * [![Node.Js][Node.js]][Node-url]
+* [![Cypress][Cypress]][Cypress-url]
 * [![Sequelize][Sequelize]][Sequelize-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
@@ -79,34 +80,30 @@ A escolha das tecnologias do projeto se baseou nos requisitos e diferenciais des
 
 ### Pré requisitos
 
-Para rodar esta aplicação é necessário o __npm__ e o ___Docker 17.09.0+___ .
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Para rodar esta aplicação é necessário ter instalado o __npm__ e o ___Docker 17.09.0+___ .
 * Docker
     https://docs.docker.com/get-docker/
 
 ### Instalação
 
 1. Clone o repositório
-   ```sh
-   git clone https://github.com/brunofpessoa/Cashforce.git
-   ```
+    ```sh
+    git clone https://github.com/brunofpessoa/Cashforce.git
+    ```
 
 2. Execute a aplicação
 No diretório ___/app___ execute:
-   ```sh
+    ```sh
     npm run compose:up
-   ```
-   ou
-   ```sh
+    ```
+    ou
+    ```sh
     npm run compose:dev:up # Versão de desenvolvimento
-   ```
+    ```
 
 Pronto, por padrão o servidor estará rodando em __localhost:3000__ e o frontend em __localhost:5173__.
 
-Caso queira, você pode mudar as as variáveis de ambiente criando um arquivo __.env__ conforme o __.env.exemple__ em cada diretório.
+Caso queira, você pode mudar as variáveis de ambiente criando um arquivo __.env__ conforme o __.env.exemple__ em cada diretório.
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
@@ -115,9 +112,9 @@ Caso queira, você pode mudar as as variáveis de ambiente criando um arquivo __
 
 1. Removendo os containers
   No diretório ___/app___ execute:
-   ```sh
+    ```sh
     npm run compose:down
-   ```
+    ```
    ou
    ```sh
     npm run compose:dev:down # Versão de desenvolvimento
@@ -132,12 +129,11 @@ Caso queira, você pode mudar as as variáveis de ambiente criando um arquivo __
 
 ## Uso
 
-
 A aplicação é bem intuitiva, basta acessar e visualizar as informações. Duas páginas podem ser vistas, uma com o resumo dos pedidos e outra com os detalhes do fornecedor.
 
-[![Página inicial][preview-1]](https://cashforce.brunopessoa.tk)
+![Página inicial][preview-1]
 
-[![Página inicial][preview-2]](https://cashforce.brunopessoa.tk)
+![Página inicial][preview-2]
 
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
@@ -146,13 +142,13 @@ A aplicação é bem intuitiva, basta acessar e visualizar as informações. Dua
 ## Rodando os testes
 
 ### Frontend
-No diretório do frontend, com a aplicação em execução rode em seu terminal:
+No diretório __/frontend__, com a aplicação em execução, rode em seu terminal:
 
 ```sh
 npm run cypress
 ```
 
-Deverá aparecer em seu terminal um resultado como o seguinte.
+Deverá aparecer em seu terminal o seguinte resultado.
 
 ![test-preview][test-preview]
 
@@ -202,3 +198,5 @@ Github - https://github.com/brunofpessoa/
 [Bootstrap-url]: https://getbootstrap.com
 [Docker]: https://img.shields.io/badge/Docker-35495E?style=for-the-badge&logo=docker&logoColor
 [Docker-url]: https://www.docker.com/
+[Cypress]: https://img.shields.io/badge/Cypress-35495E?style=for-the-badge&logo=cypress&logoColor
+[Cypress-url]: https://www.cypress.io/
