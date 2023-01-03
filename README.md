@@ -39,6 +39,7 @@
       </ul>
     </li>
     <li><a href="#uso">Uso</a></li>
+    <li><a href="#rodando-os-testes">Rodando os testes</a></li>
     <li><a href="#contato">Contato</a></li>
   </ol>
 </details>
@@ -142,6 +143,27 @@ A aplicação é bem intuitiva, basta acessar e visualizar as informações. Dua
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 
+## Rodando os testes
+
+### Frontend
+No diretório do frontend, com a aplicação em execução rode em seu terminal:
+
+```sh
+npm run cypress
+```
+
+Deverá aparecer em seu terminal um resultado como o seguinte.
+
+![test-preview][test-preview]
+
+Caso prefira visualizar o resultado no browser execute:
+```sh
+npm run cypress:open
+```
+
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+
+
 ## Contato
 
 Bruno Pessoa - brunofernpessoa@gmail.com
@@ -166,6 +188,8 @@ Github - https://github.com/brunofpessoa/
 
 [preview-1]: images/preview-1.png
 [preview-2]: images/preview-2.png
+
+[test-preview]: images/test-preview.png
 
 
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
