@@ -74,6 +74,7 @@ As tecnologias utilizadas nos testes da API foram: __Mocha__, __Sinon__ e __Chai
 * [![Vue][Vue.js]][Vue-url]
 * [![Docker][Docker]][Docker-url]
 * [![Node.Js][Node.js]][Node-url]
+* [![Express][Express]][Express-url]
 * [![Cypress][Cypress]][Cypress-url]
 * [![Sequelize][Sequelize]][Sequelize-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
@@ -219,3 +220,5 @@ Github - https://github.com/brunofpessoa/
 [Docker-url]: https://www.docker.com/
 [Cypress]: https://img.shields.io/badge/Cypress-35495E?style=for-the-badge&logo=cypress&logoColor
 [Cypress-url]: https://www.cypress.io/
+[Express]: https://img.shields.io/badge/Express.js-35495E?style=for-the-badge
+[Express-url]: https://expressjs.com/
