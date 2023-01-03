@@ -37,7 +37,13 @@
       </ul>
     </li>
     <li><a href="#uso">Uso</a></li>
-    <li><a href="#rodando-os-testes">Rodando os testes</a></li>
+    <li>
+      <a href="#rodando-os-testes">Rodando os testes</a>
+      <ul>
+        <li><a href="#frontend">Frontend</a></li>
+        <li><a href="#backend">Backend</a></li>
+      </ul>
+    </li>
     <li><a href="#contato">Contato</a></li>
   </ol>
 </details>
@@ -159,6 +165,18 @@ npm run cypress:open
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
+### Backend
+No diretório __/backend__, com a aplicação em execução, rode em seu terminal:
+
+```sh
+npm test
+```
+
+Deverá aparecer em seu terminal o seguinte resultado.
+
+![api-test-preview][api-test-preview]
+
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 ## Contato
 
@@ -186,6 +204,7 @@ Github - https://github.com/brunofpessoa/
 [preview-2]: images/preview-2.png
 
 [test-preview]: images/test-preview.png
+[api-test-preview]: images/api-test-preview.png
 
 
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
