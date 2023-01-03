@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
     "dev": "nodemon .",
-    "populate": "node -e \"require('./src/utils/dbUtils').populateDb()\""
+    "populate": "node -e \"require('./src/utils/dbUtils').populateDb()\"",
+    "start:populate": "node . && npm run populate"
   },
   "author": "Bruno Fernandes Pessoa",
   "license": "ISC",
